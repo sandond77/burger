@@ -10,25 +10,25 @@
 var connection = require('./connection.js');
 
 var orm = {
-	selectAll: function(){
-		var query = "SELECT * FROM burgers";
+	selectAll: function(cb){
+		var query = "SELECT * FROM burgers;";
 		connection.query(query, function(err, results){
 			if (err) throw err;
-			console.log(results);
+			cb(results);
 		})
 	},
-	insertOne: function(burger){
-		var query = "INSERT INTO burgers(burger_name) VALUES(?)";
-		connection.query(query,[burger], function(err,results){
+	insertOne: function(burgerName,cb){
+		var query = "INSERT INTO burgers(burger_name) VALUES(?);";
+		connection.query(query,[burgerName], function(err,results){
 			if (err) throw err;
-			console.log(results);
+			cb(results);
 		})
 	},
-	updateOne: function(status,burger){
-		var query = "UPDATE burgers SET devoured=? WHERE burger_name=?";
+	updateOne: function(status, burgerName,cb){
+		var query = "UPDATE burgers SET devoured=?s WHERE burger_name=?;";
 		connection.query(query,[status, burger], function(err,results){
 			if (err) throw err;
-			console.log(results);
+			cb(results);
 		})
 	}
 };
