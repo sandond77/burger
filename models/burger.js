@@ -14,8 +14,8 @@ var burger = {
 	update: function(status,burgerName,cb){
 		orm.updateOne(status,burgerName, function(res){
 			cb(res);
-		}
+		});
 	}
-}
+};
 
 module.exports = burger;
