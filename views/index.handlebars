@@ -4,8 +4,8 @@
 			<h2> Uneaten Burgers </h2>
 			<ol>
 			  	{{#each burgers}}
-			  		<li>{{burger_name}}
 			    	{{#unless devoured}}
+			    		<li>{{burger_name}}
 			    		<button class="devoured" data-id="{{this.id}}">DEVOUR IT!</button>
 			    	{{/unless}}
 			    	</li>
@@ -16,9 +16,10 @@
 		<div class="col-6">
 			<h2> Devoured Burgers </h2>
 			<ol>
-			  	{{#each burger}}
+			  	{{#each burgers}}
 			    	{{#if devoured}}
-			    	{{/if}}
+			    	<li>{{burger_name}}
+			    	{{/if}}</li>
 			  	{{/each}}
 			</ol>
 		</div>
