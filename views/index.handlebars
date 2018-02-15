@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div class="col-6">	
+			<h2> Uneaten Burgers </h2>
+			<ol>
+			  	{{#each burger}}
+			    	{{#unless devoured}}
+			      		<button class="devoured" data-id="{{this.id}}">DEVOUR IT!</button>
+			    	{{/unless}}
+			  	{{/each}}
+			</ol>
+		</div>
+
+		<div class="col-6">
+			<h2> Devoured Burgers </h2>
+			<ol>
+			  	{{#each burger}}
+			    	{{#if devoured}}
+			    	{{/if}}
+			  	{{/each}}
+			</ol>
+		</div>
+	</div>
+</div>
