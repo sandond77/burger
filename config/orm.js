@@ -25,8 +25,8 @@ var orm = {
 		})
 	},
 	updateOne: function(status, burgerName,cb){
-		var query = "UPDATE burgers SET devoured=?s WHERE burger_name=?;";
-		connection.query(query,[status, burger], function(err,results){
+		var query = "UPDATE burgers SET devoured=? WHERE id=?;";
+		connection.query(query,[status, burgerName], function(err,results){
 			if (err) throw err;
 			cb(results);
 		})

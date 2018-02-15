@@ -9,7 +9,7 @@ router.get("/", function(req,res){
 			burgers: data
 		}
 
-		console.log(hbsObject);
+		console.log("handlebars object", hbsObject);
 		res.render("index", hbsObject)
 	});
 });
@@ -29,7 +29,7 @@ router.post("/api/burgers", function(req,res){
 router.put("/api/burgers/:id", function(req,res){
 	var id = req.params.id;
 
-	burger.update(id, function(data){
+	burger.update(true, id, function(data){
 		if (data.affectedRows == 0) {
 	      return res.status(404).end();
 	    } else {

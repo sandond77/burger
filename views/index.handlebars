@@ -3,10 +3,12 @@
 		<div class="col-6">	
 			<h2> Uneaten Burgers </h2>
 			<ol>
-			  	{{#each burger}}
+			  	{{#each burgers}}
+			  		<li>{{burger_name}}
 			    	{{#unless devoured}}
-			      		<button class="devoured" data-id="{{this.id}}">DEVOUR IT!</button>
+			    		<button class="devoured" data-id="{{this.id}}">DEVOUR IT!</button>
 			    	{{/unless}}
+			    	</li>
 			  	{{/each}}
 			</ol>
 		</div>

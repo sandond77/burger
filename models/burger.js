@@ -11,8 +11,8 @@ var burger = {
 			cb(res);
 		})
 	},
-	update: function(status,burgerName,cb){
-		orm.updateOne(status,burgerName, function(res){
+	update: function(status, id,cb){
+		orm.updateOne(status, id, function(res){
 			cb(res);
 		});
 	}
