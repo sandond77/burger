@@ -1,11 +1,20 @@
 <div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 text-center">
+			<h1> EAT DA BURGER </h1>
+		</div>
+		<div>
+			<img src="http://moziru.com/images/burger-clipart-16.jpg" alt="burger" class="img-fluid" height="200" width="200">
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-6">	
 			<h2 class="text-center"> Uneaten Burgers </h2>
-			<ol>
+			<ol class="list-group">
 			  	{{#each burgers}}
 			    	{{#unless devoured}}
-			    		<li>{{burger_name}}
+			    		<li class="list-group-item">{{burger_name}}
 			    		<button class="devoured btn btn-primary" data-id="{{this.id}}">DEVOUR IT!</button>
 			    	{{/unless}}
 			    	</li>
@@ -15,10 +24,10 @@
 
 		<div class="col-6" >
 			<h2 class="text-center"> Devoured Burgers </h2>
-			<ol>
+			<ol class="list-group">
 			  	{{#each burgers}}
 			    	{{#if devoured}}
-			    	<li>{{burger_name}}
+			    	<li class="list-group-item">{{burger_name}}
 			    	{{/if}}</li>
 			  	{{/each}}
 			</ol>
@@ -32,9 +41,9 @@
 			 	<div class="form">
 			    	<label for="burger">Burger Name: </label>
 			   	 	<input type="text" id="burger" name="name">
-			   	 	<button type="submit" class="btn btn-secondary">Add!</button>
+			   	 	<button type="submit" class="btn btn-secondary submit">Add!</button>
 			  	</div>
 			</form>
 		</div>
-	<div>
+	</div>
 </div>
