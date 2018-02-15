@@ -1,20 +1,20 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6">	
-			<h2> Uneaten Burgers </h2>
+			<h2 class="text-center"> Uneaten Burgers </h2>
 			<ol>
 			  	{{#each burgers}}
 			    	{{#unless devoured}}
 			    		<li>{{burger_name}}
-			    		<button class="devoured" data-id="{{this.id}}">DEVOUR IT!</button>
+			    		<button class="devoured btn btn-primary" data-id="{{this.id}}">DEVOUR IT!</button>
 			    	{{/unless}}
 			    	</li>
 			  	{{/each}}
 			</ol>
 		</div>
 
-		<div class="col-6">
-			<h2> Devoured Burgers </h2>
+		<div class="col-6" >
+			<h2 class="text-center"> Devoured Burgers </h2>
 			<ol>
 			  	{{#each burgers}}
 			    	{{#if devoured}}
@@ -24,4 +24,17 @@
 			</ol>
 		</div>
 	</div>
+
+	<div class="row align-items-center">
+		<div class="col-6 offset-4 text-center">
+			<h2> Add A Burger! </h2>
+			<form class="add">  
+			 	<div class="form">
+			    	<label for="burger">Burger Name: </label>
+			   	 	<input type="text" id="burger" name="name">
+			   	 	<button type="submit" class="btn btn-secondary">Add!</button>
+			  	</div>
+			</form>
+		</div>
+	<div>
 </div>
